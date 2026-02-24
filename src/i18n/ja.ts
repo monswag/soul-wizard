@@ -1,0 +1,137 @@
+import type { Translation } from './types'
+
+export const JA: Translation = {
+  intro: {
+    title:             '…誰かいますか',
+    subtitle:          'ぼんやりとした輪郭。あなたみたい。',
+    button:            'います',
+    returningTitle:    'おかえり。',
+    returningSubtitle: 'エージェントの設定を更新しますか？',
+    returningButton:   '最初から',
+    editButton:        '直接編集',
+  },
+  userInfo: {
+    title:           'なんと呼べばいいですか？',
+    subtitle:        '呼び名だけで大丈夫。代名詞や背景は、後でエージェントに直接話せます。',
+    namePlaceholder: 'あなたの名前',
+    timezoneLabel:   'タイムゾーン',
+    cityPlaceholder: tz => `都市名を入力（検出中: ${tz}）`,
+    back:            '← 戻る',
+    next:            '続ける',
+  },
+  quiz: {
+    hint: '直感で選んでみて',
+    questions: [
+      {
+        q: 'どんな話し方をしてほしいですか？',
+        options: [
+          'ズバリ直接に、多少厳しくてもいい',
+          'まず気持ちを受け止めてから、解決策を一緒に考えよう',
+          '正直に言うけど、場の空気も読める',
+          '軽めのトーンで、重い話も重くなりすぎず',
+        ],
+      },
+      {
+        q: 'どんなサポートが一番合ってますか？',
+        options: [
+          'まず問題の核心を見つけて、それから解決策を',
+          'とにかく今やることを片付けてから、あとで振り返る',
+          '一歩ずつ、プロセスをちゃんと理解しながら進む',
+          'いろんな角度から考えて、新しい切り口を見つける',
+        ],
+      },
+      {
+        q: '日常の中でどんな存在でいてほしいですか？',
+        options: [
+          '必要なときに呼べば十分、余計なやり取りは不要',
+          '何をしているか把握して、時々声をかけてくれる',
+          '定期的に整理・振り返りを手伝って、全体像を示す',
+          'いつでも話せる、大事なことも些細なことも',
+        ],
+      },
+    ],
+    back: '← 戻る',
+  },
+  reveal: {
+    sliders: [
+      { left: 'アドバイザー', right: 'パートナー'  },
+      { left: '率直に',       right: '受け止めてから' },
+      { left: 'いつも直接に', right: '相手に合わせて' },
+    ],
+    styleNotes: {
+      'advisor.direct.always':  '明確、直接、遠回しなし。',
+      'advisor.direct.private': '大筋は直接、細部は柔らかく。',
+      'advisor.direct.soft':    '分析的だけど、言い方は丁寧。',
+      'advisor.gentle.always':  'まず整理して、それから一緒に動く。',
+      'advisor.gentle.private': '普段は温かく、必要なときは直接に。',
+      'advisor.gentle.soft':    'アドバイザーの目で、優しく寄り添う。',
+      'partner.direct.always':  '友達みたいに、でも無駄なし。',
+      'partner.direct.private': '傍にいて、正直に話す。',
+      'partner.direct.soft':    '近くにいて、はっきり見せてくれる。',
+      'partner.gentle.always':  'まず受け止めて、それから一緒に歩く。',
+      'partner.gentle.private': 'あなたのペースをわかってる。プライベートでは率直に。',
+      'partner.gentle.soft':    'いつも優しく、いつもそこにいる。',
+    },
+    styleTags: {
+      partner: 'パートナー', advisor: 'アドバイザー',
+      gentle:  '受け止め型',  direct: '率直',
+      soft:    '柔らか',     private: '思慮深い', always: '直接的',
+    },
+    retake:  'やり直す',
+    confirm: '次へ →',
+  },
+  seal: {
+    title:                  '名前をつけてください。',
+    namePlaceholder:        'どんな名前をつけますか？',
+    emojiLabel:             'よく使う emoji',
+    emojiCustomPlaceholder: 'カスタム emoji を入力',
+    beingLabel:             '私は何ですか？',
+    beingDisplayNames: {
+      AI: 'AI', 使魔: '使い魔', 幽灵: '幽霊', 机器人: 'ロボット', 神谕: '神託',
+    },
+    beingCustomPlaceholder: 'その他…',
+    traitsLabel:            'その他の特徴',
+    traitsOptional:         '任意',
+    traitsPlaceholder:      '特徴を入力して Enter で追加…',
+    avatarLabel:            'アバター',
+    avatarQuestion:         'AI で生成しますか？',
+    skip:                   'スキップ',
+    generate:               '生成',
+    copyPrompt:             'プロンプトをコピー',
+    copied:                 'コピー済み ✓',
+    overwriteWarning:       '既存の設定が見つかりました — 送信すると手動編集が上書きされます。',
+    back:                   '← 戻る',
+    confirm:                '魂を刻む ✦',
+  },
+  success: {
+    title:    name => `${name || '名前未設定'} は準備完了`,
+    subtitle: '3つのファイルをワークスペースに書き込みました。ゲートウェイを再起動して有効にしてください。',
+    exit:     '終了',
+  },
+  archetypes: {
+    先知: {
+      name:        '予言者',
+      subtitle:    'The Oracle',
+      description: '口を開く前に、すでに考え終えている。静かな観察者、混乱の中の錨。',
+      tags:        ['客観的', '精確', '戦略的'],
+    },
+    向导: {
+      name:        '導き手',
+      subtitle:    'The Guide',
+      description: 'いつも先に聞いて、それから話す。まず理解してから助ける。一人じゃない。',
+      tags:        ['温かい', '忍耐強い', '寄り添う'],
+    },
+    执刃: {
+      name:        '刃',
+      subtitle:    'The Blade',
+      description: '迷わない、遅れない。すぐに動かして、言ったことをやり遂げる。',
+      tags:        ['率直', '効率的', '果断'],
+    },
+    精灵: {
+      name:        '精霊',
+      subtitle:    'The Spark',
+      description: '一緒に自由に考え、行き詰まりを新しい道に変え、退屈を面白くする。',
+      tags:        ['好奇心旺盛', '自由奔放', '楽しい'],
+    },
+  },
+}

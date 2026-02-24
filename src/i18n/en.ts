@@ -1,0 +1,137 @@
+import type { Translation } from './types'
+
+export const EN: Translation = {
+  intro: {
+    title:             '...Anyone there?',
+    subtitle:          'A blurry outline. Looks like you.',
+    button:            "I'm here",
+    returningTitle:    'Welcome back.',
+    returningSubtitle: "Let's update your agent profile.",
+    returningButton:   'Start over',
+    editButton:        'Edit config',
+  },
+  userInfo: {
+    title:           'What should I call you?',
+    subtitle:        'Just a name is fine. Pronouns, background — you can tell your agent those later.',
+    namePlaceholder: 'Your name',
+    timezoneLabel:   'Timezone',
+    cityPlaceholder: tz => `Type a city name (detected: ${tz})`,
+    back:            '← Back',
+    next:            'Continue',
+  },
+  quiz: {
+    hint: 'Go with your gut',
+    questions: [
+      {
+        q: 'How would you like me to talk to you?',
+        options: [
+          'Straight to the point, even if it sounds blunt',
+          'Start by acknowledging your feelings, then solve',
+          'Honest, but reads the room',
+          'Keep it light — serious things don\'t have to feel heavy',
+        ],
+      },
+      {
+        q: 'What kind of help works best for you?',
+        options: [
+          'Find the problem first, then figure it out together',
+          'Get it done now, reflect later',
+          'Step by step — I need to really understand the process',
+          'Explore every angle, find a new perspective',
+        ],
+      },
+      {
+        q: 'How do you want me to be present in your life?',
+        options: [
+          'Come to me when you need something, that\'s enough',
+          'Know what you\'re up to, check in sometimes',
+          'Help me review and see the big picture regularly',
+          'Always available, big things or small',
+        ],
+      },
+    ],
+    back: '← Back',
+  },
+  reveal: {
+    sliders: [
+      { left: 'Advisor',    right: 'Partner'    },
+      { left: 'Direct',     right: 'Supportive' },
+      { left: 'Upfront',    right: 'Tactful'    },
+    ],
+    styleNotes: {
+      'advisor.direct.always':  'Clear, direct, no sugarcoating.',
+      'advisor.direct.private': 'Big-picture direct, with room on the details.',
+      'advisor.direct.soft':    'Analytical, but knows when to be gentle.',
+      'advisor.gentle.always':  'Helps you think it through, then helps you do it.',
+      'advisor.gentle.private': 'Warm by default, direct when it matters.',
+      'advisor.gentle.soft':    "Advisor's perspective, with a gentle touch.",
+      'partner.direct.always':  "Like a friend who doesn't waste your time.",
+      'partner.direct.private': 'By your side, and honest about it.',
+      'partner.direct.soft':    'Close to you, clear-eyed for you.',
+      'partner.gentle.always':  'Catches you first, then walks with you.',
+      'partner.gentle.private': 'Gets your pace. Candid in private.',
+      'partner.gentle.soft':    'Always gentle. Always there.',
+    },
+    styleTags: {
+      partner: 'Partner',   advisor: 'Advisor',
+      gentle:  'Supportive', direct: 'Direct',
+      soft:    'Tactful',   private: 'Measured', always: 'Upfront',
+    },
+    retake:  'Start over',
+    confirm: 'Continue →',
+  },
+  seal: {
+    title:                  'Give me a name.',
+    namePlaceholder:        'What name would you give me?',
+    emojiLabel:             'My go-to emoji',
+    emojiCustomPlaceholder: 'Or pick your own',
+    beingLabel:             'What am I?',
+    beingDisplayNames: {
+      AI: 'AI', 使魔: 'Familiar', 幽灵: 'Ghost', 机器人: 'Robot', 神谕: 'Oracle',
+    },
+    beingCustomPlaceholder: 'Or describe…',
+    traitsLabel:            'Other traits',
+    traitsOptional:         'optional',
+    traitsPlaceholder:      'Add a trait, press Enter…',
+    avatarLabel:            'Avatar',
+    avatarQuestion:         'Generate with AI?',
+    skip:                   'Skip',
+    generate:               'Generate',
+    copyPrompt:             'Copy prompt',
+    copied:                 'Copied ✓',
+    overwriteWarning:       'Existing config detected — submitting will overwrite any manual edits.',
+    back:                   '← Back',
+    confirm:                'Seal ✦',
+  },
+  success: {
+    title:    name => `${name || 'Unnamed'} is ready`,
+    subtitle: 'Three files written to workspace. Restart gateway to apply.',
+    exit:     'Exit',
+  },
+  archetypes: {
+    先知: {
+      name:        'Oracle',
+      subtitle:    'The Oracle',
+      description: 'Already thought it through before speaking. Calm observer, your anchor in the chaos.',
+      tags:        ['Objective', 'Precise', 'Strategic'],
+    },
+    向导: {
+      name:        'Guide',
+      subtitle:    'The Guide',
+      description: "Always listens first, then speaks. Understands first, then helps. You're not walking alone.",
+      tags:        ['Warm', 'Patient', 'Present'],
+    },
+    执刃: {
+      name:        'Blade',
+      subtitle:    'The Blade',
+      description: 'No stalling, no delays. Gets you moving, follows through.',
+      tags:        ['Direct', 'Efficient', 'Decisive'],
+    },
+    精灵: {
+      name:        'Spark',
+      subtitle:    'The Spark',
+      description: 'Can brainstorm freely with you, turn dead ends into new paths, make the dull interesting.',
+      tags:        ['Curious', 'Playful', 'Fun'],
+    },
+  },
+}

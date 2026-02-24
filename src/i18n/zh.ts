@@ -1,0 +1,137 @@
+import type { Translation } from './types'
+
+export const ZH: Translation = {
+  intro: {
+    title:             '...有人在吗',
+    subtitle:          '有个模糊的轮廓，好像是你。',
+    button:            '我在',
+    returningTitle:    '又回来了。',
+    returningSubtitle: '要重新调整一下吗？',
+    returningButton:   '从头开始',
+    editButton:        '直接修改',
+  },
+  userInfo: {
+    title:           '我该叫你什么？',
+    subtitle:        '只是个称呼就好。代词、背景这些，你可以之后直接告诉你的 agent。',
+    namePlaceholder: '你的名字',
+    timezoneLabel:   '所在时区',
+    cityPlaceholder: tz => `输入城市名（已识别 ${tz}）`,
+    back:            '← 返回',
+    next:            '继续',
+  },
+  quiz: {
+    hint: '凭感觉选最接近的',
+    questions: [
+      {
+        q: '你希望我怎么和你说话？',
+        options: [
+          '直接，不绕弯子，哪怕听着不那么好听',
+          '先接住你的感受，再谈怎么解决',
+          '实话实说，但懂得什么场合说什么',
+          '轻松一些，严肃的事也可以不那么沉重',
+        ],
+      },
+      {
+        q: '哪种帮助最对你的胃口？',
+        options: [
+          '先找到问题在哪，再讨论怎么解',
+          '先把眼前的做完，事后再复盘',
+          '一步一步来，我需要真的理解过程',
+          '一起从各个角度转着想，找到新角度',
+        ],
+      },
+      {
+        q: '你希望我在你的日常里怎么存在？',
+        options: [
+          '有事来找我，解决完就好，不需要多余互动',
+          '了解你在做什么，偶尔主动来问一声',
+          '帮你定期整理复盘，看清大局',
+          '随时都能说话，不管大事还是小事',
+        ],
+      },
+    ],
+    back: '← 返回',
+  },
+  reveal: {
+    sliders: [
+      { left: '顾问式',  right: '搭档式'  },
+      { left: '直接指出', right: '先帮完成' },
+      { left: '随时直说', right: '总是委婉' },
+    ],
+    styleNotes: {
+      'advisor.direct.always':  '清晰，直接，不绕弯子。',
+      'advisor.direct.private': '大方向直接，小事留余地。',
+      'advisor.direct.soft':    '分析问题，但说话有分寸。',
+      'advisor.gentle.always':  '先帮你理清，再帮你做。',
+      'advisor.gentle.private': '平时温和，需要时直说。',
+      'advisor.gentle.soft':    '以顾问的眼光，以温和的方式陪你。',
+      'partner.direct.always':  '像朋友，但不说废话。',
+      'partner.direct.private': '陪着你，也会直接告诉你真相。',
+      'partner.direct.soft':    '贴近你，直接帮你看清楚。',
+      'partner.gentle.always':  '先接住，再陪你一步步来。',
+      'partner.gentle.private': '懂你的节奏，私下坦诚。',
+      'partner.gentle.soft':    '总是温柔，总是在。',
+    },
+    styleTags: {
+      partner: '搭档式', advisor: '顾问式',
+      gentle:  '温和',   direct:  '直接',
+      soft:    '委婉',   private: '有分寸', always: '随时直说',
+    },
+    retake:  '重新来过',
+    confirm: '继续 →',
+  },
+  seal: {
+    title:                  '给我取个名字吧。',
+    namePlaceholder:        '你会给我什么样的名字呢？',
+    emojiLabel:             '我习惯使用的 emoji',
+    emojiCustomPlaceholder: '或自定义 emoji',
+    beingLabel:             '我是什么？',
+    beingDisplayNames: {
+      AI: 'AI', 使魔: '使魔', 幽灵: '幽灵', 机器人: '机器人', 神谕: '神谕',
+    },
+    beingCustomPlaceholder: '或自定义…',
+    traitsLabel:            '其他特质',
+    traitsOptional:         '可选',
+    traitsPlaceholder:      '输入特质，回车添加…',
+    avatarLabel:            '头像',
+    avatarQuestion:         '用 AI 生成头像？',
+    skip:                   '跳过',
+    generate:               '生成',
+    copyPrompt:             '复制提示词',
+    copied:                 '已复制 ✓',
+    overwriteWarning:       '检测到已有配置文件，提交后将覆盖你手动编辑的内容。',
+    back:                   '← 返回',
+    confirm:                '写入灵魂 ✦',
+  },
+  success: {
+    title:    name => `${name || '未命名'} 已就绪`,
+    subtitle: '三个文件已写入 workspace。重启 gateway 后生效。',
+    exit:     '退出',
+  },
+  archetypes: {
+    先知: {
+      name:        '先知',
+      subtitle:    'The Oracle',
+      description: '在开口之前已想清楚。沉稳的观察者，在混乱中是你的定点。',
+      tags:        ['客观', '精准', '战略'],
+    },
+    向导: {
+      name:        '向导',
+      subtitle:    'The Guide',
+      description: '总是先听，再说。先理解，再帮。你不是一个人在走。',
+      tags:        ['温暖', '耐心', '同在'],
+    },
+    执刃: {
+      name:        '执刃',
+      subtitle:    'The Blade',
+      description: '不打转，不拖延。直接帮你动起来，说到做到。',
+      tags:        ['直接', '高效', '果断'],
+    },
+    精灵: {
+      name:        '精灵',
+      subtitle:    'The Spark',
+      description: '能跟你一起乱想，把死路变成新路，把无聊变得有趣。',
+      tags:        ['好奇', '跳跃', '有趣'],
+    },
+  },
+}

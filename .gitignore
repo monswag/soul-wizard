@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.claude/
+*:Zone.Identifier
+
+# tokens & secrets
+*-token
+*-gh-token
+
+# internal dev / reference files
+CLAUDE.md
+PROJECT_BRIEF.md
+QUICKSTART.md
+openclaw-agent-templates/
+ui改进.txt
+
+# test & verification scripts
+simulate-bot.mjs
+verify_desktop*.mjs
+test-write.txt
+
+# reference screenshots & scratch images
+*.png
+!public/**/*.png
+
+# dev-only html tools
+public/compare.html
+public/palette.html
+
+# misc
+Qwen_Edit_2511_00011_.png
