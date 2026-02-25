@@ -117,16 +117,29 @@ function AppInner() {
       agent: syncedAgent, choices, archetype,
     }))
     setHasExistingConfig(true)
+
+    const files = generateFiles(syncedAgent, user, choices)
+    const payload = JSON.stringify({
+      identityMd:    files.identityMd,
+      soulMd:        files.soulMd,
+      userMd:        files.userMd,
+      avatarPrompt:  generateAvatar ? files.imagePrompt : undefined,
+      generateAvatar,
+    })
+
     if (isTelegram) {
-      const files = generateFiles(syncedAgent, user, choices)
-      TGBridge.sendData(JSON.stringify({
-        identityMd:    files.identityMd,
-        soulMd:        files.soulMd,
-        userMd:        files.userMd,
-        avatarPrompt:  generateAvatar ? files.imagePrompt : undefined,
-        generateAvatar,
-      }))
+      // Telegram Mini App: send via WebApp bridge (auto-closes the app)
+      TGBridge.sendData(payload)
     } else {
+      // Discord / WhatsApp / standalone: POST to ?callback=<url> if provided
+      const callbackUrl = new URLSearchParams(window.location.search).get('callback')
+      if (callbackUrl) {
+        fetch(callbackUrl, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    payload,
+        }).catch(() => { /* server-side handles errors; show success regardless */ })
+      }
       setDone(true)
     }
   }
